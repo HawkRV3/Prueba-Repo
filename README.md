@@ -1,21 +1,20 @@
-Vulnerabilities
+Vulnerabilities:
 
-Inyección de JavaScript (XSS - Cross-Site Scripting):
-La línea document.body.innerHTML += <p>Welcome, ${username}!</p>; es vulnerable a inyecciones de JavaScript. Si un usuario ingresa un nombre de usuario que incluye código HTML o JavaScript, este será ejecutado.
-Solución:
-Utilizar métodos seguros para manipular el DOM, como textContent o crear elementos de manera programática y añadirlos al DOM.
+JavaScript Injection (XSS - Cross-Site Scripting): The application is vulnerable to JavaScript injection. If a user inputs a username that includes HTML or JavaScript code, it will be executed.
+Solution:
+Use secure methods to manipulate the DOM, such as textContent or programmatically creating elements and adding them to the DOM.
 
-Almacenamiento inseguro de credenciales (comentado):
-Aunque el almacenamiento en localStorage ha sido comentado, es importante notar que almacenar credenciales en el lado del cliente (navegador) es una mala práctica de seguridad.
-Solución:
-Nunca almacenar credenciales en el lado del cliente. Utilizar métodos seguros para manejar la autenticación, como sesiones o tokens de autenticación.
+Insecure Credential Storage (commented out):
+Even though storing credentials in localStorage has been commented out, it is important to note that storing credentials on the client side (browser) is a bad security practice.
+Solution:
+Never store credentials on the client side. Use secure methods to handle authentication, such as sessions or authentication tokens.
 
-Validación débil de credenciales:
-Las credenciales están codificadas directamente en el código JavaScript. Esto es inseguro y no es escalable.
-Solución:
-Implementar la validación de credenciales en el lado del servidor, no en el lado del cliente. Las credenciales deben ser enviadas de forma segura al servidor para su validación.
+Weak Credential Validation:
+Credentials are hardcoded directly into the JavaScript code. This is insecure and not scalable.
+Solution:
+Implement credential validation on the server side, not on the client side. Credentials should be securely sent to the server for validation.
 
-Falta de cifrado para la transmisión de datos:
-No se menciona el uso de HTTPS para la transmisión de datos, lo cual es crucial para proteger las credenciales durante su transmisión.
-Solución:
-Asegurarse de que la aplicación esté utilizando HTTPS para cifrar la comunicación entre el cliente y el servidor.
+Lack of Encryption for Data Transmission:
+There is no mention of using HTTPS for data transmission, which is crucial for protecting credentials during their transmission.
+Solution:
+Ensure that the application uses HTTPS to encrypt communication between the client and the server.
