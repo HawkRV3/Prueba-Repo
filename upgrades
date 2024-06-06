@@ -1,4 +1,4 @@
-#UPGRADES
+UPGRADES
 
 XSS Prevention: Use textContent instead of innerHTML to prevent code injection.
 Credential Validation: Credentials are sent to the server for validation instead of being validated on the client side.
